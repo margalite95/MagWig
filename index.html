@@ -6,127 +6,149 @@
 <title>MagWigs</title>
 
 <style>
+
+/* בסיס */
+* {
+box-sizing: border-box;
+}
+
 body {
-margin:0;
-font-family:Arial;
-background:black;
-color:white;
+margin: 0;
+font-family: Arial, sans-serif;
+background: black;
+color: white;
 }
 
+/* קונטיינר */
 .container {
-max-width:700px;
-margin:auto;
-border:2px solid gold;
-border-radius:20px;
-overflow:hidden;
-box-shadow:0 0 30px rgba(255,215,0,0.3);
-padding-bottom:20px;
+max-width: 700px;
+margin: auto;
+border: 2px solid gold;
+border-radius: 20px;
+overflow: hidden;
+box-shadow: 0 0 30px rgba(255,215,0,0.3);
+padding-bottom: 20px;
 }
 
+/* לוגו */
 .logo {
-display:block;
-margin:20px auto;
-max-width:220px;
+display: block;
+margin: 20px auto;
+max-width: 200px;
 }
 
+/* כותרת */
 .hero {
-padding:20px;
-text-align:center;
+text-align: center;
+padding: 20px;
 }
 
 .hero h1 {
-color:gold;
-font-size:32px;
-margin:10px 0;
+color: gold;
+font-size: 28px;
+margin: 10px 0;
 }
 
+.hero p {
+margin: 0;
+}
+
+/* פס זהב */
 .ribbon {
-background:linear-gradient(90deg,#b9832b,#f3d78a,#b9832b);
-color:black;
-text-align:center;
-padding:12px;
-font-weight:bold;
-font-size:20px;
+background: linear-gradient(90deg,#b9832b,#f3d78a,#b9832b);
+color: black;
+text-align: center;
+padding: 12px;
+font-weight: bold;
 }
 
+/* טופס */
 .form {
-background:#111;
-padding:25px;
-max-width:550px;
-margin:auto;
-border-radius:15px;
+background: #111;
+padding: 20px;
+max-width: 550px;
+margin: auto;
+border-radius: 15px;
 }
 
 /* GRID */
 .form-grid {
-display:grid;
-grid-template-columns: 1fr 1fr;
-gap:15px;
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 12px;
 }
 
 .full {
-grid-column: 1 / -1;
+grid-column: span 2;
 }
 
+/* שדות */
 label {
-display:block;
-color:gold;
-margin-bottom:5px;
-font-size:14px;
+color: gold;
+display: block;
+margin-bottom: 5px;
+font-size: 14px;
 }
 
 input, select, textarea {
-width:100%;
-padding:12px;
-border-radius:10px;
-border:1px solid #555;
-background:#222;
-color:white;
-font-size:14px;
+width: 100%;
+padding: 12px;
+border-radius: 10px;
+border: 1px solid #555;
+background: #222;
+color: white;
+font-size: 14px;
+margin: 0;
 }
 
 textarea {
-height:90px;
+height: 90px;
 }
 
+/* כפתור */
 button {
-width:100%;
-margin-top:20px;
-padding:15px;
-background:gold;
-color:black;
-border:none;
-border-radius:12px;
-font-weight:bold;
-font-size:18px;
-cursor:pointer;
+width: 100%;
+margin-top: 15px;
+padding: 15px;
+background: gold;
+color: black;
+border: none;
+border-radius: 12px;
+font-weight: bold;
+font-size: 16px;
+cursor: pointer;
 }
 
 /* וואטסאפ */
 .whatsapp {
-position:fixed;
-bottom:20px;
-left:20px;
-background:#25D366;
-color:white;
-padding:12px 18px;
-border-radius:50px;
-text-decoration:none;
-font-weight:bold;
+position: fixed;
+bottom: 20px;
+left: 20px;
+background: #25D366;
+color: white;
+padding: 12px 18px;
+border-radius: 50px;
+text-decoration: none;
+font-weight: bold;
 }
 
 /* מובייל */
-@media (max-width:600px) {
+@media (max-width: 600px) {
 
 .form-grid {
 grid-template-columns: 1fr;
 }
 
-.hero h1 {
-font-size:24px;
+.full {
+grid-column: span 1;
+}
+
+.container {
+width: 95%;
 }
 
 }
+
 </style>
 </head>
 
@@ -134,108 +156,29 @@ font-size:24px;
 
 <div class="container">
 
+<!-- לוגו -->
 <img src="logo.jpeg" class="logo">
 
+<!-- כותרת -->
 <div class="hero">
 <h1>פאות איכות ברמה גבוהה</h1>
 <p>במחירים שלא תמצאי בשום מקום</p>
 </div>
 
+<!-- פס -->
 <div class="ribbon">
 איכות יוקרתית במחיר מפתיע
 </div>
 
-<div class="form">
-
-<form action="https://formsubmit.co/Margalite95@gmail.com" method="POST">
-
-<div class="form-grid">
-
-<div>
-<label>שם ושם משפחה</label>
-<input type="text" name="name" required>
-</div>
-
-<div>
-<label>טלפון</label>
-<input type="tel" name="phone" required>
-</div>
-
-<div class="full">
-<label>כתובת מלאה</label>
-<input type="text" name="address">
-</div>
-
-<div>
-<label>בחירת פאה</label>
-<select name="wigType">
-<option>לייס</option>
-<option>לייס מקופל</option>
-<option>פאת סרט</option>
-<option>פאת קוקו</option>
-</select>
-</div>
-
-<div>
-<label>גודל רשת</label>
-<select name="size">
-<option>S</option>
-<option>M</option>
-<option>L</option>
-</select>
-</div>
-
-<div>
-<label>אורך הפאה (ס״מ)</label>
-<input type="number" name="length">
-</div>
-
-<div>
-<label>סוג שיער</label>
-<select name="hairType">
-<option>חלק</option>
-<option>גלי</option>
-<option>מתולתל</option>
-</select>
-</div>
-
-<div>
-<label>צבע הפאה</label>
-<input type="text" name="color">
-</div>
-
-<div>
-<label>צבע הגוונים</label>
-<input type="text" name="highlights">
-</div>
-
-<div class="full">
-<label>סוג לייס</label>
-<select name="lace">
-<option>רגיל</option>
-<option>מקופל</option>
-</select>
-</div>
-
-<div class="full">
-<label>הערות</label>
-<textarea name="notes"></textarea>
-</div>
-
-</div>
-
-<button type="submit">שליחת הזמנה</button>
-
-</form>
-
-</div>
-
+<!-- טופס -->
+<!-- תחתית -->
 <div style="text-align:center;color:gold;margin-top:10px;">
 יופי אמיתי — במחיר שעושה טוב ❤️
 </div>
 
 </div>
 
+<!-- וואטסאפ -->
 <a class="whatsapp" href="https://wa.me/972586660460" target="_blank">
 💬 וואטסאפ
 </a>
