@@ -46,6 +46,96 @@ margin:10px 0;
 }
 
 /* פס */
+.ribbon {
+background:linear-gradient(90deg,#b9832b,#f3d78a,#b9832b);
+color:black;
+text-align:center;
+padding:12px;
+font-weight:bold;
+}
+
+/* טופס */
+.form {
+background:#111;
+padding:20px;
+max-width:550px;
+margin:auto;
+border-radius:15px;
+}
+
+/* GRID */
+.form-grid {
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+}
+
+.full {
+grid-column:span 2;
+}
+
+/* שדות */
+label {
+color:gold;
+display:block;
+margin-bottom:5px;
+font-size:14px;
+}
+
+input, select, textarea {
+width:100%;
+padding:12px;
+border-radius:10px;
+border:1px solid #555;
+background:#222;
+color:white;
+font-size:14px;
+}
+
+textarea {
+height:90px;
+}
+
+/* כפתור */
+button {
+width:100%;
+margin-top:15px;
+padding:15px;
+background:gold;
+color:black;
+border:none;
+border-radius:12px;
+font-weight:bold;
+font-size:16px;
+cursor:pointer;
+}
+
+/* וואטסאפ */
+.whatsapp {
+position:fixed;
+bottom:20px;
+left:20px;
+background:#25D366;
+color:white;
+padding:12px 18px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* מובייל */
+@media (max-width:600px) {
+.form-grid { grid-template-columns:1fr; }
+.full { grid-column:span 1; }
+.container { width:95%; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
 <img src="logo.jpeg" class="logo">
 
 <div class="hero">
@@ -60,7 +150,6 @@ margin:10px 0;
 <div class="form">
 
 <form id="wigForm" action="https://formsubmit.co/ajax/Margalite95@gmail.com" method="POST">
-
 
 <div class="form-grid">
 
