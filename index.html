@@ -6,174 +6,61 @@
 <title>MagWigs</title>
 
 <style>
-
-/* בסיס */
-* {
-box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
-margin: 0;
-font-family: Arial, sans-serif;
-background: black;
-color: white;
+margin:0;
+font-family:Arial;
+background:black;
+color:white;
 }
 
 /* קונטיינר */
 .container {
-max-width: 700px;
-margin: auto;
-border: 2px solid gold;
-border-radius: 20px;
-overflow: hidden;
-box-shadow: 0 0 30px rgba(255,215,0,0.3);
-padding-bottom: 20px;
+max-width:700px;
+margin:auto;
+border:2px solid gold;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 0 30px rgba(255,215,0,0.3);
+padding-bottom:20px;
 }
 
 /* לוגו */
 .logo {
-display: block;
-margin: 20px auto;
-max-width: 200px;
+display:block;
+margin:20px auto;
+max-width:200px;
 }
 
 /* כותרת */
 .hero {
-text-align: center;
-padding: 20px;
+text-align:center;
+padding:20px;
 }
 
 .hero h1 {
-color: gold;
-font-size: 28px;
-margin: 10px 0;
+color:gold;
+font-size:28px;
+margin:10px 0;
 }
 
-.hero p {
-margin: 0;
-}
-
-/* פס זהב */
-.ribbon {
-background: linear-gradient(90deg,#b9832b,#f3d78a,#b9832b);
-color: black;
-text-align: center;
-padding: 12px;
-font-weight: bold;
-}
-
-/* טופס */
-.form {
-background: #111;
-padding: 20px;
-max-width: 550px;
-margin: auto;
-border-radius: 15px;
-}
-
-/* GRID */
-.form-grid {
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-gap: 12px;
-}
-
-.full {
-grid-column: span 2;
-}
-
-/* שדות */
-label {
-color: gold;
-display: block;
-margin-bottom: 5px;
-font-size: 14px;
-}
-
-input, select, textarea {
-width: 100%;
-padding: 12px;
-border-radius: 10px;
-border: 1px solid #555;
-background: #222;
-color: white;
-font-size: 14px;
-margin: 0;
-}
-
-textarea {
-height: 90px;
-}
-
-/* כפתור */
-button {
-width: 100%;
-margin-top: 15px;
-padding: 15px;
-background: gold;
-color: black;
-border: none;
-border-radius: 12px;
-font-weight: bold;
-font-size: 16px;
-cursor: pointer;
-}
-
-/* וואטסאפ */
-.whatsapp {
-position: fixed;
-bottom: 20px;
-left: 20px;
-background: #25D366;
-color: white;
-padding: 12px 18px;
-border-radius: 50px;
-text-decoration: none;
-font-weight: bold;
-}
-
-/* מובייל */
-@media (max-width: 600px) {
-
-.form-grid {
-grid-template-columns: 1fr;
-}
-
-.full {
-grid-column: span 1;
-}
-
-.container {
-width: 95%;
-}
-
-}
-
-</style>
-</head>
-
-<body>
-
-<div class="container">
-
-<!-- לוגו -->
+/* פס */
 <img src="logo.jpeg" class="logo">
 
-<!-- כותרת -->
 <div class="hero">
 <h1>פאות איכות ברמה גבוהה</h1>
 <p>במחירים שלא תמצאי בשום מקום</p>
 </div>
 
-<!-- פס -->
 <div class="ribbon">
 איכות יוקרתית במחיר מפתיע
 </div>
 
-<!-- טופס -->
 <div class="form">
 
-<form action="https://formsubmit.co/Margalite95@gmail.com" method="POST">
+<form id="wigForm" action="https://formsubmit.co/ajax/Margalite95@gmail.com" method="POST">
+
 
 <div class="form-grid">
 
@@ -252,21 +139,41 @@ width: 95%;
 
 <button type="submit">שליחת הזמנה</button>
 
+<p id="successMsg" style="display:none;color:lightgreen;text-align:center;margin-top:10px;">
+ההזמנה נשלחה בהצלחה! נחזור אלייך 💕
+</p>
+
 </form>
 
 </div>
 
-<!-- תחתית -->
 <div style="text-align:center;color:gold;margin-top:10px;">
-יופי אמיתי —במחירים מפתיעים ❤️
+יופי אמיתי — במחירים מפתיעים ❤️
 </div>
 
 </div>
 
-<!-- וואטסאפ -->
 <a class="whatsapp" href="https://wa.me/972586660460" target="_blank">
 💬 וואטסאפ
 </a>
+
+<script>
+const form = document.getElementById("wigForm");
+const msg = document.getElementById("successMsg");
+
+form.addEventListener("submit", function(e){
+e.preventDefault();
+
+fetch(form.action, {
+method: "POST",
+body: new FormData(form)
+})
+.then(() => {
+form.reset();
+msg.style.display = "block";
+});
+});
+</script>
 
 </body>
 </html>
