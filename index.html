@@ -15,7 +15,6 @@ background:black;
 color:white;
 }
 
-/* קונטיינר */
 .container {
 max-width:700px;
 margin:auto;
@@ -26,14 +25,12 @@ box-shadow:0 0 30px rgba(255,215,0,0.3);
 padding-bottom:20px;
 }
 
-/* לוגו */
 .logo {
 display:block;
 margin:20px auto;
 max-width:200px;
 }
 
-/* כותרת */
 .hero {
 text-align:center;
 padding:20px;
@@ -45,7 +42,6 @@ font-size:28px;
 margin:10px 0;
 }
 
-/* פס */
 .ribbon {
 background:linear-gradient(90deg,#b9832b,#f3d78a,#b9832b);
 color:black;
@@ -54,7 +50,6 @@ padding:12px;
 font-weight:bold;
 }
 
-/* טופס */
 .form {
 background:#111;
 padding:20px;
@@ -63,7 +58,6 @@ margin:auto;
 border-radius:15px;
 }
 
-/* GRID */
 .form-grid {
 display:grid;
 grid-template-columns:repeat(2,1fr);
@@ -74,7 +68,6 @@ gap:12px;
 grid-column:span 2;
 }
 
-/* שדות */
 label {
 color:gold;
 display:block;
@@ -96,7 +89,6 @@ textarea {
 height:90px;
 }
 
-/* כפתור */
 button {
 width:100%;
 margin-top:15px;
@@ -110,7 +102,6 @@ font-size:16px;
 cursor:pointer;
 }
 
-/* וואטסאפ */
 .whatsapp {
 position:fixed;
 bottom:20px;
@@ -123,7 +114,6 @@ text-decoration:none;
 font-weight:bold;
 }
 
-/* מובייל */
 @media (max-width:600px) {
 .form-grid { grid-template-columns:1fr; }
 .full { grid-column:span 1; }
@@ -149,7 +139,10 @@ font-weight:bold;
 
 <div class="form">
 
-<form id="wigForm" action="https://formsubmit.co/ajax/Margalite95@gmail.com" method="POST">
+<form action="https://formsubmit.co/Margalite95@gmail.com" method="POST">
+
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_next" value="thanks.html">
 
 <div class="form-grid">
 
@@ -228,10 +221,6 @@ font-weight:bold;
 
 <button type="submit">שליחת הזמנה</button>
 
-<p id="successMsg" style="display:none;color:lightgreen;text-align:center;margin-top:10px;">
-ההזמנה נשלחה בהצלחה! נחזור אלייך 💕
-</p>
-
 </form>
 
 </div>
@@ -245,24 +234,6 @@ font-weight:bold;
 <a class="whatsapp" href="https://wa.me/972586660460" target="_blank">
 💬 וואטסאפ
 </a>
-
-<script>
-const form = document.getElementById("wigForm");
-const msg = document.getElementById("successMsg");
-
-form.addEventListener("submit", function(e){
-e.preventDefault();
-
-fetch(form.action, {
-method: "POST",
-body: new FormData(form)
-})
-.then(() => {
-form.reset();
-msg.style.display = "block";
-});
-});
-</script>
 
 </body>
 </html>
