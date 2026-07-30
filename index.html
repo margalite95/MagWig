@@ -9,7 +9,7 @@
 
 <style>
 :root {
-  /* פלטת צבעים - testי */
+  /* פלטת צבעים */
   --bg-dark: #0f0c0b;
   --bg-surface: #1a1614;
   --gold-primary: #e2b49a;
@@ -30,7 +30,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; /* מאפשר גלילה חלקה לכפתור */
 }
 
 body {
@@ -105,17 +105,16 @@ header {
 }
 
 .brand-text strong {
-  font-family: 'Playfair Display', serif; /* הפונט היוקרתי החדש */
-  font-size: 32px; /* הוגדל מעט כדי להתאים לפרופורציות של הפונט */
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  /* יצירת מראה רוז-גולד מטאלי ובולט */
   background: linear-gradient(135deg, #f5e1da 0%, #df9c82 50%, #c58b6e 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1;
-  margin-top: -15px; /* משיכת הטקסט למעלה כדי שיהיה צמוד ללוגו */
+  margin-top: -15px;
 }
 
 .brand-text span {
@@ -128,16 +127,17 @@ header {
 }
 
 /* ====================
-   MAIN STACKED HERO
+   MAIN HERO
    ==================== */
 .hero-split {
-  min-height: 100vh;
+  min-height: 80vh;
   display: flex;
-  flex-direction: column; /* Changed to stacked layout */
-  gap: 50px;
+  flex-direction: column;
+  gap: 40px;
+  justify-content: center;
   align-items: center;
-  padding-top: 220px;
-  padding-bottom: 60px;
+  padding-top: 180px;
+  padding-bottom: 40px;
 }
 
 .hero-text {
@@ -166,7 +166,7 @@ header {
   flex-direction: column;
   gap: 20px;
   align-items: center;
-  margin: 0 auto 20px auto;
+  margin: 0 auto 30px auto;
   width: 100%;
 }
 
@@ -204,9 +204,203 @@ header {
   margin: 0;
 }
 
+/* כפתור הגיבור הגדול */
+.btn-hero {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold-primary));
+  color: #2a1b15;
+  text-decoration: none;
+  padding: 18px 40px;
+  border-radius: 12px;
+  font-size: 20px;
+  font-weight: 900;
+  box-shadow: 0 8px 25px rgba(226, 180, 154, 0.25);
+  transition: var(--transition);
+  margin-top: 15px;
+}
+
+.btn-hero:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(226, 180, 154, 0.35);
+  filter: brightness(1.05);
+}
+
 /* ====================
-   LEAD FORM CARD
+   GUARANTEE BANNER
    ==================== */
+.guarantee-banner {
+  background: linear-gradient(135deg, rgba(226, 180, 154, 0.1), rgba(26, 22, 20, 0.8));
+  border: 1px solid var(--gold-primary);
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+  box-shadow: var(--shadow-glow);
+  margin: 0 auto 40px auto;
+}
+
+.guarantee-banner h3 {
+  color: var(--gold-primary);
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.guarantee-banner p {
+  color: var(--text-main);
+  font-size: 16px;
+  margin: 0;
+}
+
+/* ====================
+   INFO & REVIEWS SECTIONS
+   ==================== */
+.info-section {
+  text-align: center;
+  padding: 40px 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.info-section h2, .reviews-section h2, .process-section h2 {
+  font-size: clamp(26px, 3.5vw, 36px);
+  color: var(--gold-light);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.info-section p {
+  color: var(--text-muted);
+  font-size: clamp(16px, 2vw, 18px);
+  line-height: 1.8;
+}
+
+/* ====================
+   HOW IT WORKS (PROCESS)
+   ==================== */
+.process-section {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.process-step {
+  position: relative;
+  padding: 30px 20px;
+  background: var(--bg-surface);
+  border-radius: 20px;
+  border: 1px solid rgba(226, 180, 154, 0.1);
+  transition: var(--transition);
+}
+
+.process-step:hover {
+  border-color: var(--gold-primary);
+  transform: translateY(-5px);
+}
+
+.step-number {
+  position: absolute;
+  top: -20px;
+  right: 50%;
+  transform: translateX(50%);
+  width: 40px;
+  height: 40px;
+  background: var(--gold-primary);
+  color: var(--bg-dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 20px;
+  box-shadow: 0 5px 15px rgba(226, 180, 154, 0.3);
+}
+
+.process-step h4 {
+  color: var(--gold-light);
+  font-size: 20px;
+  margin: 20px 0 10px;
+}
+
+.process-step p {
+  color: var(--text-muted);
+  font-size: 15px;
+}
+
+/* ====================
+   REVIEWS SECTION
+   ==================== */
+.reviews-section {
+  padding: 20px 0 60px 0;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.review-card {
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border-radius: 20px;
+  padding: 30px;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-glow);
+  border-color: var(--gold-primary);
+}
+
+.stars {
+  color: #ffb400;
+  display: flex;
+  gap: 4px;
+}
+
+.stars svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.review-text {
+  color: var(--text-muted);
+  font-size: 15px;
+  font-style: italic;
+  flex-grow: 1;
+}
+
+.review-author {
+  font-weight: 700;
+  color: var(--gold-primary);
+  font-size: 16px;
+  margin-top: 10px;
+  border-top: 1px solid rgba(226, 180, 154, 0.1);
+  padding-top: 15px;
+}
+
+/* ====================
+   LEAD FORM CARD (MOVED TO BOTTOM)
+   ==================== */
+.order-section-wrapper {
+  padding: 60px 0 80px 0;
+}
+
 .form-card {
   background: var(--bg-glass);
   border: 1px solid var(--border-glass);
@@ -217,7 +411,7 @@ header {
   box-shadow: var(--shadow-glow);
   position: relative;
   width: 100%;
-  max-width: 600px; /* Limit width on desktop for better readability */
+  max-width: 600px;
   margin: 0 auto;
 }
 
@@ -233,9 +427,20 @@ header {
   letter-spacing: 1px;
 }
 
+.form-relaxation {
+  background: rgba(226, 180, 154, 0.1);
+  color: var(--gold-primary);
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-top: 15px;
+  border-right: 3px solid var(--gold-primary);
+  text-align: right;
+}
+
 .form-grid {
   display: grid;
-  grid-template-columns: 1fr; /* One column for all inputs */
+  grid-template-columns: 1fr;
   gap: 16px;
 }
 
@@ -283,7 +488,7 @@ header {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23e2b49a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: left 16px center;
-  padding-left: 40px; /* Space for the arrow */
+  padding-left: 40px;
 }
 
 .form-group textarea {
@@ -322,13 +527,12 @@ header {
 }
 
 /* ====================
-   FOOTER
+   FOOTER & WHATSAPP
    ==================== */
 footer {
   border-top: 1px solid rgba(226, 180, 154, 0.1);
   padding: 30px 0;
   text-align: center;
-  margin-top: 40px;
 }
 
 footer p {
@@ -336,9 +540,6 @@ footer p {
   font-size: 14px;
 }
 
-/* ====================
-   FLOATING WHATSAPP & THANKS
-   ==================== */
 .floating-wa {
   position: fixed;
   bottom: 30px;
@@ -436,63 +637,26 @@ footer p {
 }
 
 /* ====================
-   RESPONSIVE DESIGN (TABLET & MOBILE)
+   RESPONSIVE
    ==================== */
-
 @media (max-width: 992px) {
-  header {
-    position: relative;
-    padding: 40px 0 20px 0;
-  }
-  
-  .hero-split {
-    padding-top: 20px;
-  }
+  header { position: relative; padding: 40px 0 20px 0; }
+  .hero-split { padding-top: 20px; }
 }
 
 @media (max-width: 480px) {
-  .brand img {
-    height: 75px;
-  }
-  
-  .brand-text strong {
-    font-size: 22px;
-  }
-  
-  .form-card {
-    padding: 30px 20px;
-  }
-  
-  .form-group input, 
-  .form-group select, 
-  .form-group textarea {
-    padding: 12px; 
-  }
-  
-  .btn-submit {
-    padding: 15px;
-    font-size: 16px;
-  }
-  
-  .floating-wa {
-    bottom: 20px;
-    left: 20px;
-    width: 50px;
-    height: 50px;
-  }
-  
-  .floating-wa svg {
-    width: 26px;
-    height: 26px;
-  }
-  
-  .thanks-box {
-    padding: 40px 20px;
-  }
-  
-  .thanks-box h2 {
-    font-size: 26px;
-  }
+  .brand img { height: 75px; }
+  .brand-text strong { font-size: 22px; }
+  .btn-hero { font-size: 16px; padding: 15px 30px; }
+  .form-card { padding: 30px 20px; }
+  .form-group input, .form-group select, .form-group textarea { padding: 12px; }
+  .btn-submit { padding: 15px; font-size: 16px; }
+  .guarantee-banner { padding: 25px 15px; border-radius: 12px; }
+  .floating-wa { bottom: 20px; left: 20px; width: 50px; height: 50px; }
+  .floating-wa svg { width: 26px; height: 26px; }
+  .thanks-box { padding: 40px 20px; }
+  .thanks-box h2 { font-size: 26px; }
+  .info-section, .process-section, .reviews-section, .order-section-wrapper { padding-top: 40px; padding-bottom: 40px; }
 }
 </style>
 </head>
@@ -513,10 +677,10 @@ footer p {
 
   <section class="container hero-split">
     
-    <!-- Top Section: Sales Copy -->
+    <!-- Top Section: Sales Copy & Call to Action -->
     <div class="hero-text">
       <h1>הפאה המושלמת שלך <br><span class="gradient-text">במרחק קליק אחד</span></h1>
-      <p>מלאי את המפרט המבוקש בטופס, ונחזור אלייך עם הצעת מחיר אישית ומשתלמת במיוחד. הצעד הראשון לפאת החלומות שלך מתחיל כאן, ללא כל התחייבות.</p>
+      <p>ונחזור אלייך עם הצעת מחיר אישית ומשתלמת במיוחד. הצעד הראשון לפאת החלומות שלך מתחיל כאן, ללא כל התחייבות.</p>
       
       <ul class="trust-list">
         <li class="trust-item">
@@ -543,17 +707,116 @@ footer p {
           </div>
           <div class="trust-content">
             <h3>התאמה מדויקת</h3>
-            <p>מידות, צבעים וגזרות  למידותייך.</p>
+            <p>מידות, צבעים וגזרות למידותייך.</p>
           </div>
         </li>
       </ul>
-    </div>
 
-    <!-- Bottom Section: The Form -->
+      <!-- כפתור גלילה מטה לטופס -->
+      <a href="#order-form-section" class="btn-hero">לחצי כאן לקבלת הצעת מחיר</a>
+    </div>
+  </section>
+
+  <!-- Guarantee Banner -->
+  <section class="container">
+    <div class="guarantee-banner">
+      <h3>קודם מודדת, אחר כך משלמת.</h3>
+      <p>השקט הנפשי שלך חשוב לנו. מעבר לדמי טיפול סמליים לתחילת העבודה, <strong>התשלום על הפאה מתבצע אך ורק במעמד האיסוף והמדידה.</strong></p>
+    </div>
+  </section>
+
+  <!-- Info Section -->
+  <section class="container info-section">
+    <h2>למה לבחור בפאות של <span class="gradient-text">MagiWigs?</span></h2>
+    <p>
+      אנו מאמינים שלכל אישה מגיעה פאה שתרגיש בה הכי בנוח בעולם. הפאות שלנו מיוצרות מ-100% שיער טבעי ואיכותי, שנבחר בקפידה כדי להבטיח מראה טבעי, רך וזוהר. בזכות המודל הישיר שלנו, אנחנו מצליחים לספק איכות של מותגי יוקרה - בלי פערי התיווך, ובמחיר שמאפשר לך להתחדש בראש שקט.
+    </p>
+  </section>
+
+  <!-- Process Section -->
+  <section class="container process-section">
+    <h2>איך זה <span class="gradient-text">עובד?</span></h2>
+    <p style="color: var(--text-muted); margin-top: 10px;">שלושה צעדים פשוטים בדרך לפאת החלומות שלך</p>
+    
+    <div class="process-grid">
+      <!-- Step 1 -->
+      <div class="process-step">
+        <div class="step-number">1</div>
+        <h4>מילוי פרטים והצעת מחיר</h4>
+        <p>את ממלאת את השאלון הקצר למטה עם המפרט המדויק שאת מחפשת, ואנחנו חוזרים אלייך עם הצעת מחיר אטרקטיבית וייעוץ אישי ללא התחייבות.</p>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="process-step">
+        <div class="step-number">2</div>
+        <h4>התאמה וייצור</h4>
+        <p>לאחר אישור ההצעה ותשלום מקדמה סימלית, אנחנו מתחילים במלאכת ההרכבה וההתאמה של הפאה במיוחד למידותייך.</p>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="process-step">
+        <div class="step-number">3</div>
+        <h4>מדידה והשלמת רכישה</h4>
+        <p>הפאה מוכנה! את מוזמנת לאיסוף ומדידה. את בוחנת את השיער, מרגישה את הרשת, <strong>ומשלמת רק אחרי שהתאהבת בתוצאה.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews Section -->
+  <section class="container reviews-section">
+    <h2>מה הלקוחות <span class="gradient-text">שלנו אומרות</span></h2>
+    
+    <div class="reviews-grid">
+      <!-- Review 1 -->
+      <div class="review-card">
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="review-text">"הפאה הכי נוחה שהייתה לי! השיער רך, מלא ברק ונראה לגמרי טבעי. קיבלתי שירות מעל ומעבר וההתאמה הייתה פשוט מושלמת למידות שלי. תודה רבה!"</p>
+        <div class="review-author">תהילה כ.</div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="review-card">
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="review-text">"חיפשתי פאת לייס איכותית המון זמן והמחירים בשוק היו מוגזמים. ב-MagiWigs מצאתי בדיוק את מה שרציתי בחצי מחיר, בלי להתפשר על מילימטר של איכות."</p>
+        <div class="review-author">רבקה מ.</div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="review-card">
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="review-text">"הזמנתי פאה לחתונה של הבת שלי. קיבלתי אין סוף מחמאות והרגשתי הכי טבעית בעולם! הלייס יושב בצורה פשוט גאונית. ממליצה בחום לכל אחת."</p>
+        <div class="review-author">שולמית ל.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Form Section (Moved to the bottom) -->
+  <section id="order-form-section" class="container order-section-wrapper">
     <div class="form-card">
       <div class="form-header">
         <h2>קבלת הצעת מחיר</h2>
         <p style="font-size: 14px; color: var(--text-muted);">אנא מלאי את הפרטים הבאים</p>
+        <div class="form-relaxation">
+          לא בטוחה לגבי כל הפרטים? הכל בסדר! תמלאי מה שאת יודעת, ואנחנו כבר נייעץ לך לגבי השאר בשיחה.
+        </div>
       </div>
 
       <form id="orderForm" action="https://formsubmit.co/Margalite95@gmail.com" method="POST">
@@ -573,11 +836,11 @@ footer p {
             <input type="tel" name="phone" required placeholder="050-0000000">
           </div>
 
-                    <!-- שדה האימייל שנוסף -->
           <div class="form-group">
             <label>כתובת אימייל</label>
             <input type="email" name="email" placeholder="לדוג': mail@example.com">
           </div>
+          
           <div class="form-group">
             <label>כתובת מלאה</label>
             <input type="text" name="address" placeholder="עיר, רחוב ומספר בית">
@@ -586,7 +849,6 @@ footer p {
           <div class="form-group">
             <label>בחירת פאה</label>
             <select name="wigType">
-              <!-- <option value="" disabled selected>סוג הפאה</option> -->
               <option>לייס</option>
               <option>לייס מקופל</option>
               <option>פאת סרט</option>
@@ -597,7 +859,6 @@ footer p {
           <div class="form-group">
             <label>גודל רשת</label>
             <select name="size">
-              <!-- <option value="" disabled selected>מידה משוערת</option> -->
               <option>S</option>
               <option>M</option>
               <option>L</option>
@@ -612,7 +873,6 @@ footer p {
           <div class="form-group">
             <label>סוג שיער</label>
             <select name="hairType">
-              <!-- <option value="" disabled selected>טקסטורת שיער</option> -->
               <option>חלק</option>
               <option>גלי</option>
               <option>מתולתל</option>
@@ -621,38 +881,31 @@ footer p {
 
           <div class="form-group">
             <label>צבע הפאה</label>
-            <!-- <input type="text" name="color" placeholder="למשל: חום כהה"> -->
-                    <select name="color">
-              <!-- <option value="" disabled selected>טקסטורת שיער</option> -->
+            <select name="color">
               <option>בלונדיני</option>
               <option>שטני</option>
               <option>חום</option>
-                            <option>חום כהה</option>
+              <option>חום כהה</option>
               <option>שחור</option>
             </select>  
-        </div>
-
+          </div>
 
           <div class="form-group">
             <label>צבע הגוונים</label>
-            <!-- <input type="text" name="highlights" placeholder="למשל: גווני שמש"> -->
-         <select name="highlights">
-              <!-- <option value="" disabled selected>טקסטורת שיער</option> -->
+            <select name="highlights">
+              <option>ללא גוונים</option>
               <option>בלונדיני</option>
               <option>ג'ינג'י</option>
-
             </select>   
-        </div>
+          </div>
 
           <div class="form-group">
             <label>סוג לייס</label>
             <select name="lace">
-              <!-- <option value="" disabled selected>גימור חזית</option> -->
               <option>רגיל</option>
               <option>מקופל</option>
-                            <option>לייס מאוורר</option>
-                            <option>ללא</option>
-
+              <option>לייס מאוורר</option>
+              <option>ללא</option>
             </select>
           </div>
 
@@ -666,12 +919,11 @@ footer p {
         <div id="form-message"></div>
       </form>
     </div>
-
   </section>
 
   <footer>
     <div class="container">
-      <p>&copy; <span id="year"></span> MAGIWIGS. פאות  איכותיות במחירים מפתיעים.</p>
+      <p>&copy; <span id="year"></span> MAGIWIGS. פאות איכותיות במחירים מפתיעים.</p>
     </div>
   </footer>
 </div>
